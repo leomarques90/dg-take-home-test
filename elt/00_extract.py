@@ -129,7 +129,7 @@ def _main():
             weather_data_file, refined_dir, "weather", cities_with_lat_lon, day_unix_time)
 
         historical_weather.append(day_weather)
-    
+
     logging.info(f"All data successfully extracted!")
 
 
