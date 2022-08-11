@@ -1,5 +1,13 @@
+# Table of Contents
+
+- [DG Take Home Test](#dg-take-home-test)
+- [How to run it](#how-to-run-it)
+- [About the solution](#about-the-solution)
+  - [Considerations](#considerations)
+- [The exercise](#the-exercise)
+
 # DG Take Home Test
-This repo was created to solve the business necessities described on the topic `The Exercise`.
+This repo was created to solve the business necessities described on the topic [The exercise](#the-exercise).
 
 # How to run it
 1. Create a .env file according to the template and add API_KEY from [openweather](https://home.openweathermap.org/api_keys)
