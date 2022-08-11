@@ -24,7 +24,8 @@ I developed a solution to:
 - If the files are already presented, the API is not called. I developed in that way thinking about the limit of 1000;
 - Some functions were designing thinking about a data-oriented programming approach;
 - The functions of script `02_transformation.py` that stores data into the database could be improved, but I think I'm taking too long to deploy this activity;
-- I choose MySQL because it is listed on job description.
+- I choose MySQL because it is listed on job description;
+- Tests could be implemented, but I think I'm taking too long to deliver this.
 
 # The exercise
 
