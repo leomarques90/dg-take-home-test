@@ -1,5 +1,8 @@
 version: '3.8'
 
+networks:
+  dg-test:
+    name: dg_net
 
 services:
   mysql:
@@ -12,6 +15,8 @@ services:
       - "3306:3306"
     security_opt:
       - seccomp:unconfined
+    networks:
+      - dg-test
 
   app:
     image: python:3.7
@@ -20,6 +25,8 @@ services:
     ports: 
       - 8000:8000
     working_dir: /project
-    command: sh -c "pip install -r requirements.txt && python elt/00_extract.py && python elt/01_load.py && python elt/02_transformation.py"
+    command: sh -c "mkdir data data/01_raw data/02_refined && pip install -r requirements.txt && python elt/00_extract.py && python elt/01_load.py && python elt/02_transformation.py"
     depends_on:
       - mysql
+    networks:
+      - dg-test
