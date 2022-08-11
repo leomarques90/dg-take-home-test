@@ -20,5 +20,12 @@ The candidate can choose which kind of db, or data formats are used as a reposit
 The deliverable should contain a docker-compose file so it can be run by running ‘docker-compose up’ command. If the workflow relies on any database or any other middleware, this docker-compose file should have all what is necessary to make the workflow work (except passwords for the API or any other secret information)
 The code should be well structured and add necessary log traces to easily detect problems. 
 
-# Refs
-https://openweathermap.org/api/one-call-3#history
+# How to run it
+add .env file according to the template.
+
+```sh
+docker-compose up --build
+```
+
+# Considerations
+There is a lot to improve, but I decided to prioritize delivery as soon as possible.

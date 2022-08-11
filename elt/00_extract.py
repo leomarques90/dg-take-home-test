@@ -2,14 +2,16 @@ import os
 import requests
 import logging
 import json
-from datetime import datetime, timedelta, timezone, date, time
-from dotenv import load_dotenv
+import configparser
 
-load_dotenv()
+from datetime import datetime, timedelta, timezone, date, time
+
+config = configparser.ConfigParser()
+config.read('.env')
 
 BASE_URL_SAMPLE_DATA = "https://api.openweathermap.org/data/2.5/weather"
 BASE_URL_HISTORICAL_DATA = "https://api.openweathermap.org/data/2.5/onecall/timemachine"
-API_KEY = os.getenv("API_KEY")
+API_KEY = config['envvars']["API_KEY"]
 
 logging.basicConfig(level=logging.INFO)
 

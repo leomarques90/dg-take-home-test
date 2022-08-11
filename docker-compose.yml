@@ -1,4 +1,6 @@
-version: '3.1'
+version: '3.8'
+
+
 services:
   mysql:
     build: .
@@ -10,21 +12,14 @@ services:
       - "3306:3306"
     security_opt:
       - seccomp:unconfined
+
   app:
-    image: python:3.8-alpine
+    image: python:3.7
     volumes:
       - .:/project
     ports: 
       - 8000:8000
     working_dir: /project
-    command: []
+    command: sh -c "pip install -r requirements.txt && python elt/00_extract.py && python elt/01_load.py && python elt/02_transformation.py"
     depends_on:
-      - requirements
       - mysql
-
-  requirements:
-    image: python:3.8-alpine
-    volumes:
-      - .:/project
-    working_dir: /project
-    command: pip install -r requirements.txt

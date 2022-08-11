@@ -1,3 +1,3 @@
 FROM mysql
 
-ADD scripts/create_table.sql /docker-entrypoint-initdb.d
+ADD scripts/create_tables.sql /docker-entrypoint-initdb.d
