@@ -118,7 +118,6 @@ def _main():
     dataset_two = generate_dataset_two(base_dataset)
     insert_data_into_dataset_two(connection, cursor, dataset_two)
 
-    print(dataset_two)
 
 if __name__ == '__main__':
     _main()
