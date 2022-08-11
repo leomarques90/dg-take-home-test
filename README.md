@@ -20,6 +20,8 @@ I developed a solution to:
 ## Considerations
 - The paths doesn't need to exist;
 - The tables are created automatically;
+- I implemented the idempotency on database, by choosing keys that guarantee that the data will not be duplicated;
+- If the files are already presented, the API is not called. I developed in that way thinking about the limit of 1000;
 - Some functions were designing thinking about a data-oriented programming approach;
 - The functions of script `02_transformation.py` that stores data into the database could be improved, but I think I'm taking too long to deploy this activity;
 - I choose MySQL because it is listed on job description.
