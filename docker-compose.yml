@@ -1,0 +1,30 @@
+version: '3.1'
+services:
+  mysql:
+    build: .
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+    ports:
+      - "3306:3306"
+    security_opt:
+      - seccomp:unconfined
+  app:
+    image: python:3.8-alpine
+    volumes:
+      - .:/project
+    ports: 
+      - 8000:8000
+    working_dir: /project
+    command: []
+    depends_on:
+      - requirements
+      - mysql
+
+  requirements:
+    image: python:3.8-alpine
+    volumes:
+      - .:/project
+    working_dir: /project
+    command: pip install -r requirements.txt
